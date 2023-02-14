@@ -1,7 +1,7 @@
 // eslint-disable-next-line
 import { createSeasonList } from './homepage.js';
 
-export const fetchSeason = async (seasonId) => {
+const fetchSeason = async (seasonId) => {
   const url = `https://api.tvmaze.com/seasons/${seasonId}/episodes`;
   await fetch(url)
     .then((response) => response.json())
@@ -12,3 +12,5 @@ export const fetchSeason = async (seasonId) => {
       console.error(error);
     });
 };
+
+export default fetchSeason;
