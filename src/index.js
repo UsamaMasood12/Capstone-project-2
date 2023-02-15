@@ -1,4 +1,6 @@
-import { fetchSeason, fetchLike, postNewLike } from './modules/APIfunctions.js';
+import {
+  fetchEpisode, fetchSeason, fetchLike, postNewLike,
+} from './modules/APIfunctions.js';
 import countEpisodes from './modules/episodeCounter.js';
 import './style.css';
 
@@ -39,6 +41,10 @@ seasonbtn3.onclick = () => {
 
 const episodesContainer = document.querySelector('.home-page');
 episodesContainer.onclick = (event) => {
+  if (event.target.id === 'main-comment-popup') {
+    const { episodeId } = event.target.parentNode.dataset;
+    fetchEpisode(episodeId);
+  }
   if (event.target.id === 'heart-button') {
     const button = event.target;
     button.classList.toggle('heart-animation');

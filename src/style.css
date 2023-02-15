@@ -128,6 +128,116 @@ button {
   color: rgb(59, 53, 53);
 }
 
+.popup-wrapper {
+  position: fixed;
+  z-index: 99;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow-y: scroll;
+  background-color: rgb(202, 202, 202);
+}
+
+.popup {
+  width: 90%;
+  margin: 5% auto;
+  padding: 10% 5%;
+  background: #fff;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#close-button {
+  font-size: 2em;
+  position: absolute;
+  right: 2%;
+  top: 2%;
+}
+
+.popup-episode-img {
+  width: 90%;
+  object-fit: contain;
+}
+
+.popup-episode-header {
+  font-size: 1.7em;
+}
+
+.popup-comments-header,
+.popup-form-header {
+  font-size: 1.5em;
+}
+
+.popup-episode-details-wrapper {
+  display: grid;
+  width: 70%;
+  grid-template-columns: 1fr 1fr;
+}
+
+.popup-episode-details-wrapper > * {
+  margin: 0;
+  padding: 1% 0;
+}
+
+.popup-comments-container {
+  width: 70%;
+  height: 15vh;
+  padding: 0 2%;
+  overflow-y: auto;
+}
+
+.comment-line {
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.comment-line > * {
+  margin: 1% 2%;
+}
+
+.comment-date {
+  width: 20%;
+}
+
+.comment-user {
+  width: 35%;
+}
+
+.comment-text {
+  width: 45%;
+}
+
+#popup-comments-form {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+
+.form-input {
+  border: none;
+  border-radius: 10px;
+  margin: 1% 0;
+  padding: 3%;
+  font-size: 1.1em;
+  font-family: customFont, sans-serif;
+}
+
+.form-label {
+  display: none;
+}
+
+.formsubmit-btn {
+  width: 50%;
+  font-size: 1.1em;
+}
+
 .footer {
   position: fixed;
   left: 0;
@@ -152,6 +262,7 @@ button {
 
 #heart-button:hover,
 button:hover,
+#close-button:hover,
 #season-1:hover,
 #season-2:hover,
 #season-3:hover {
@@ -178,6 +289,23 @@ button:hover,
     font-size: 1.5em;
   }
 
+  .popup {
+    width: 70%;
+    margin: 10% auto;
+  }
+
+  #close-button {
+    font-size: 2.4em;
+  }
+
+  .popup-episode-details-wrapper > * {
+    font-size: 1.4em;
+  }
+
+  .popup-episode-header {
+    font-size: 2em;
+  }
+
   #heart-button {
     font-size: 1.3em;
   }
@@ -199,6 +327,31 @@ button:hover,
     font-size: 1.5em;
   }
 
+  .episode-name {
+    font-size: 2em;
+  }
+
+  #close-button {
+    font-size: 3em;
+  }
+
+  .popup-episode-header {
+    font-size: 2em;
+  }
+
+  .popup-comments-header,
+  .popup-form-header {
+    font-size: 1.8em;
+  }
+
+  .comment-line > * {
+    font-size: 1.3em;
+  }
+
+  .formsubmit-btn {
+    font-size: 1.5em;
+  }
+
   #heart-button {
     font-size: 1.5em;
   }
@@ -209,5 +362,10 @@ button:hover,
 
   #main-comment-popup {
     font-size: 1.8em;
+  }
+
+  .form-input {
+    font-family: customFont, sans-serif;
+    font-size: 1.6em;
   }
 }
