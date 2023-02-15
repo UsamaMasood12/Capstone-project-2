@@ -8,4 +8,12 @@ const aniApi = async () => {
     return data;
 };
 
-const popup
+const popup = async (idArrs) => {
+    const api = await aniApi();
+
+    for (let i = 0; i < cmtbutton.length; i+ = 1){
+        comtbutton[i].onclick = () => {
+            
+        }
+    }
+}
