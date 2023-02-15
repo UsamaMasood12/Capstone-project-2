@@ -1,14 +1,16 @@
 // eslint-disable-next-line
 import { createSeasonList, displayLikes } from './homepage.js';
+import episodeCounter from './episodeCounter.js';
 
 const likeURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KKlgY0e6iTLZYxIsAnMC/likes';
 
-export const fetchSeason = async (seasonId) => {
+export const fetchSeason = async (seasonId, counter) => {
   const url = `https://api.tvmaze.com/seasons/${seasonId}/episodes`;
   await fetch(url)
     .then((response) => response.json())
     .then((data) => {
       createSeasonList(data);
+      episodeCounter(counter);
     })
     .catch((error) => {
       console.error(error);
