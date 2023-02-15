@@ -2,9 +2,11 @@
 import { createPopup, updatePopupComments } from './DOMfunctions.js';
 import { createSeasonList, displayLikes } from './homepage.js';
 import episodeCounter from './episodeCounter.js';
+
 const appId = '/KKlgY0e6iTLZYxIsAnMC';
 const commentURL = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps${appId}/comments`;
 const likeURL = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps${appId}/likes`;
+
 export const fetchComments = async (episodeId) => {
   let comments = [];
   const fetchCommentUrl = `${commentURL}?item_id=${episodeId}`;
@@ -14,6 +16,7 @@ export const fetchComments = async (episodeId) => {
     updatePopupComments(comments);
   }
 };
+
 export const postComments = async (commentObj) => {
   await fetch(commentURL, {
     method: 'POST',
@@ -22,6 +25,7 @@ export const postComments = async (commentObj) => {
   });
   fetchComments(commentObj.item_id);
 };
+
 export const fetchEpisode = async (episodeId) => {
   const tvResponse = await fetch(`https://api.tvmaze.com/episodes/${episodeId}`);
   if (tvResponse.status === 200) {
@@ -30,6 +34,7 @@ export const fetchEpisode = async (episodeId) => {
     fetchComments(episodeId);
   }
 };
+
 export const fetchSeason = async (seasonId, counter) => {
   const url = `https://api.tvmaze.com/seasons/${seasonId}/episodes`;
   await fetch(url)
@@ -42,6 +47,7 @@ export const fetchSeason = async (seasonId, counter) => {
       console.error(error);
     });
 };
+
 export const fetchLike = async () => {
   let likes = [];
   const likeResponse = await fetch(likeURL);
@@ -50,6 +56,7 @@ export const fetchLike = async () => {
     displayLikes(likes);
   }
 };
+
 export const postNewLike = async (episodeId) => {
   await fetch(likeURL, {
     method: 'POST',
