@@ -1,7 +1,7 @@
 // eslint-disable-next-line
 import { createPopup, updatePopupComments } from './DOMfunctions.js';
 import { createSeasonList, displayLikes } from './homepage.js';
-import episodeCounter from './episodeCounter.js';
+import countEpisodes from './episodeCounter.js';
 
 const appId = '/KKlgY0e6iTLZYxIsAnMC';
 const commentURL = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps${appId}/comments`;
@@ -41,7 +41,7 @@ export const fetchSeason = async (seasonId, counter) => {
     .then((response) => response.json())
     .then((data) => {
       createSeasonList(data);
-      episodeCounter(counter);
+      countEpisodes(counter);
     })
     .catch((error) => {
       console.error(error);
