@@ -62,7 +62,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://UsamaMasood12.github.io/capstone-project-2/dist/)
+- [Live Demo Link](https://UsamaMasood12.github.io/Capstone-project-2/dist/)
 
 A video presentation of the project can be found in this [Video Link](hhttps://drive.google.com/file/d/1txKw-6cq9hISoQBrMLzPLqhB3YB-c8sn/view?usp=share_link)
 
